@@ -1,0 +1,410 @@
+
+/* ========================================
+   BASE RECIPES PAGE
+======================================== */
+.savoura-recipes-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f7f4;
+  color: #292929;
+  box-sizing: border-box;
+}
+
+/* User All Recipes page */
+.savoura-recipes-page.user-recipes-page {
+  background-color: #f4f6fc !important;
+  color: #1b2559;
+  min-height: 100vh;
+}
+
+/* Public All Recipes page */
+.savoura-recipes-page.public-recipes-page {
+  background-color: #f8f7f4 !important;
+  color: #292929;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+.savoura-recipes-page .savoura-recipes-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 250px;
+  padding: 65px 20px 70px;
+  margin: 0;
+  box-sizing: border-box;
+  background: #292929;
+  color: #ffffff;
+  text-align: center;
+}
+
+.savoura-recipes-page .savoura-eyebrow {
+  margin: 0 0 20px;
+  color: #ff5148;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.savoura-recipes-page .savoura-recipes-hero h1 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.savoura-recipes-page .savoura-recipes-hero > p:last-child {
+  margin: 0;
+  color: #dddddd;
+  line-height: 1.8;
+}
+
+/* User page hero background */
+.main-panel main.savoura-recipes-page.user-recipes-page
+.savoura-recipes-hero {
+  background: #f4f6fc !important;
+  color: #1b2559 !important;
+}
+
+.main-panel main.savoura-recipes-page.user-recipes-page
+.savoura-recipes-hero h1 {
+  color: #1b2559 !important;
+}
+
+.main-panel main.savoura-recipes-page.user-recipes-page
+.savoura-recipes-hero > p:last-child {
+  color: #777f9a !important;
+}
+
+/* Keep public page hero dark */
+main.savoura-recipes-page.public-recipes-page
+.savoura-recipes-hero {
+  background: #292929 !important;
+  color: #ffffff !important;
+}
+
+main.savoura-recipes-page.public-recipes-page
+.savoura-recipes-hero h1 {
+  color: #ffffff !important;
+}
+
+main.savoura-recipes-page.public-recipes-page
+.savoura-recipes-hero > p:last-child {
+  color: #dddddd !important;
+}
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+.savoura-recipes-page .savoura-recipes-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 55px 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADING AND SEARCH
+======================================== */
+.savoura-recipes-page .savoura-recipes-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.savoura-recipes-page .savoura-recipes-top h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.savoura-recipes-page.user-recipes-page
+.savoura-recipes-top h2 {
+  color: #1b2559;
+}
+
+.savoura-recipes-page .savoura-recipes-top p {
+  margin: 0;
+  color: #777777;
+}
+
+.savoura-recipes-page.user-recipes-page
+.savoura-recipes-top p {
+  color: #777f9a;
+}
+
+.savoura-recipes-page .savoura-recipe-search {
+  width: 340px;
+  max-width: 100%;
+  height: 48px;
+  margin-left: auto;
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #292929;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.savoura-recipes-page .savoura-recipe-search:focus {
+  border-color: #d91e18;
+  box-shadow: 0 0 0 2px rgba(217, 30, 24, 0.1);
+}
+
+.savoura-recipes-page .public-recipe-search {
+  width: 365px;
+}
+
+/* ========================================
+   RECIPE GRID
+======================================== */
+.savoura-recipes-page .savoura-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.savoura-recipes-page .savoura-recipe-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.savoura-recipes-page .savoura-recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Recipe image */
+.savoura-recipes-page .savoura-recipe-image,
+.savoura-recipes-page .savoura-recipe-no-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  flex-shrink: 0;
+  margin: 0;
+  object-fit: cover;
+}
+
+.savoura-recipes-page .savoura-recipe-no-image {
+  display: grid;
+  place-items: center;
+  background: #eae7e1;
+  color: #777777;
+}
+
+/* Recipe details */
+.savoura-recipes-page .savoura-recipe-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 23px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.savoura-recipes-page .savoura-recipe-category {
+  display: inline-block;
+  align-self: center;
+  margin-bottom: 10px;
+  color: #d91e18;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.savoura-recipes-page .savoura-recipe-content h3 {
+  margin: 0 0 12px;
+  color: #292929;
+  font-size: 22px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.savoura-recipes-page .savoura-recipe-description,
+.savoura-recipes-page .savoura-recipe-ingredients {
+  color: #666666;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+
+.savoura-recipes-page .savoura-recipe-content h4 {
+  margin: 20px 0 10px;
+  color: #292929;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ========================================
+   SAVE RECIPE BUTTON
+======================================== */
+.savoura-recipes-page .savoura-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 4px;
+  background: #d91e18;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.savoura-recipes-page .savoura-save-button:hover {
+  background: #a91512;
+}
+
+.savoura-recipes-page .savoura-save-button.is-saved,
+.savoura-recipes-page .savoura-save-button:disabled {
+  background: #777777;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   SAVE AND DELETE BUTTON ALIGNMENT
+======================================== */
+.savoura-recipes-page .recipe-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 24px;
+  box-sizing: border-box;
+}
+
+.savoura-recipes-page .recipe-actions .savoura-save-button {
+  margin: 0;
+}
+
+/* Delete button */
+.savoura-recipes-page .savoura-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 4px;
+  background: #dc3545;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.savoura-recipes-page .savoura-delete-button:hover {
+  background: #b02a37;
+}
+
+.savoura-recipes-page .savoura-delete-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   LOADING, ERROR AND EMPTY MESSAGES
+======================================== */
+.savoura-recipes-page .savoura-recipes-message {
+  padding: 30px 15px;
+  color: #777777;
+  text-align: center;
+}
+
+.savoura-recipes-page .savoura-recipes-empty {
+  padding: 45px 20px;
+  border-radius: 6px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.savoura-recipes-page .savoura-recipes-empty h3 {
+  margin-bottom: 12px;
+  color: #292929;
+}
+
+.savoura-recipes-page .savoura-recipes-empty p {
+  margin-bottom: 0;
+  color: #777777;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 900px) {
+  .savoura-recipes-page .savoura-recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .savoura-recipes-page .savoura-recipes-hero {
+    min-height: 200px;
+    padding: 45px 18px;
+  }
+
+  .savoura-recipes-page .savoura-recipes-hero h1 {
+    font-size: 32px;
+  }
+
+  .savoura-recipes-page .savoura-recipes-container {
+    padding: 35px 0;
+  }
+
+  .savoura-recipes-page .savoura-recipes-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .savoura-recipes-page .savoura-recipe-search,
+  .savoura-recipes-page .public-recipe-search {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .savoura-recipes-page .savoura-recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .savoura-recipes-page .recipe-actions {
+    gap: 10px;
+  }
+
+  .savoura-recipes-page .recipe-actions button {
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+}
